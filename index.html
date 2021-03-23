@@ -5,36 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nani's FH/FN Presets</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
-<body>
+<body id="cuerpo" onload="lista()">
 <!--HEADER-->
     <header>
         <section id="hero">
-            <!--Menú redes-->
-            <nav id="web">
-                <ul id="menuweb">
-                    <li><a href="">ToS</a></li>
-                    <li><a href="">Commission</a></li>
-                    <li><a href=""></a>Payment</li>
-                    <li><a href=""></a>Presets</li>
-                    <li><a href=""></a>Shop</li>
-                    <li><a href=""></a>DeviantArt</li>
-                </ul>
-            </nav>
-            <!--//Menú redes-->
-            <!--Menú hamburguesa-->
+        <!--Menú hamburguesa-->
             <nav id="mobile">
-				<a href="javascript:hamburguesa()"><i id="list" class="fas fa-ellipsis-v"></i></a>
+				<a href="javascript:burger()"><i id="list" class="fas fa-ellipsis-v"></i></a>
 				<ul id="menumobile">
-					<li><a href="">ToS</a></li>
-					<li><a href="">Commission</a></li>
-					<li><a href="">Payment</a></li>
-					<li><a href="">Presets</a></li>
-                    <li><a href="">Shop</a></li>
-                    <li><a href="">DeviantArt</a></li>
+					<li><a href="#ToS">ToS</a></li>
+					<li><a href="#commission">Commission</a></li>
+					<li><a href="#payment">Payment</a></li>
+					<li><a href="#showcase">Presets</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#DA">DeviantArt</a></li>
 				</ul>
 			</nav>
-            <!--//Menú hamburguesa-->
+        <!--//Menú hamburguesa-->
         </section>
     </header>
 <!--//HEADER-->
@@ -42,9 +32,10 @@
 <main>
     <!--About Me-->
     <section id="aboutme">
-        <div class="text">
+        <div id="text">
             <h1>Welcome</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Hello! You can call me Nani and here you will find all the comm info. Be sure to read my ToS before commissioning me.
+            You can find me in discord (HappyTragedy # 1477), FH (Xoda) and FN (MindlessFreak).</p>
         </div>
     </section>
     <!--//About Me-->
@@ -52,25 +43,25 @@
     <section id="ToS">
         <div id="img_izq">
             <h1>Terms of Service</h1>
-            <img src="">
+            <img src="assets/images/foto.jpg">
         </div>
-        <div id="lista"></div>
+        <div class="lista"></div>
     </section>
     <!--//ToS-->
     <!--Commission-->
 	<section id="commission">
+        <h1>So, do you want a commission?</h1>
 		<div class="container"></div>
 	</section>
 <!--//Commission-->
 <!--Payment-->
     <section id="payment">
         <h1>Payment</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         <div class="treecircles"></div>
     </section>
 <!--//Payment-->
 <!--Presets-->
-    <section>
+    <section id="showcase">
         <nav id="presets">
             <ul id="menucateg">
                 <li><a href="">Simple</a></li>
@@ -86,17 +77,23 @@
     <section id="shop">
         <h1>Shop</h1>
         <ul id="row"></ul>
-        <button onclick="" id="myBtn">View More</button>
+        <div  id="light" class="bye">
+            <figure>
+            <a id="x" onclick="closeLightbox()">X</a>
+              <img src="" id="imagen" alt="Exit" width="" height="">
+                <figcaption>
+                  <h2 id="title" class="fuente"></h2>
+                  <p class="text" class="fuente"></p>
+                </figcaption>
+            </figure>
+          </div>
     </section>
 <!--//Shop-->
 <!--DeviantArt-->
     <section id="DA">
-        <div id="img_der">
-            <img src="">
-        </div>
         <div id="DeviantArt">
             <h1>You can also find me in DeviantArt</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <a>Visit me</a>
         </div>
     </section>
 <!--//DeviantArt-->
@@ -106,7 +103,8 @@
 <footer>
 
 </footer>
-<script type="text/javascript" src="index.js"></script>
+<script type="text/javascript" src="assets/js/index.js"></script>
+<script type="text/javascript" src="assets/js/responsive.js"></script>
 <!--//FOOTER-->
 </body>
 </html>
