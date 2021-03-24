@@ -44,10 +44,42 @@ img{
 	max-width: 100%;
 }
 
+h1{
+    font-family: "Tempus Sans ITC";
+}
+
+h2, a{
+    font-family: "Blue Highway";
+}
+
+p{
+    font-family: "Tahoma";
+}
+
 #hero{
     background-image: url(../images/hero.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
 	height: 100vh;
+}
+
+#logo{
+    display: grid;
+    grid-template-columns: repeat(1, 50%);
+    justify-content: center;
+    justify-items: center;
+    padding: 7% 0% 16% 0%;
+}
+
+#logo img{
+    width: 40%;
+    border-radius: 50%;
+}
+
+#logo h1{
+    color: white;
+    font-size: 2.5em;
 }
 
 #mobile i{
@@ -64,6 +96,7 @@ img{
 #mobile a{
     text-decoration: none;
     color: white;
+    font-size: 1.2em;
 }
 
 #aboutme{
@@ -71,16 +104,16 @@ img{
 }
 
 #text{
-	width: 40%;
+	width: 48%;
     text-align: center;
     margin: 0 auto;
 }
 
 #text h1{
-	font-size: 2em;
+	font-size: 2.5em;
     margin: 20% 0% 11% 0%;
     text-transform: uppercase;
-    color: rgba(51, 51, 51, 1);
+    color: rgb(25 25 25);
 }
 
 #text p{
@@ -106,7 +139,7 @@ img{
     color: white;
     font-size: 3em;
     top: 50%;
-    left: 11%;
+    left: 23%;
 }
 
 .img_izq img{
@@ -116,7 +149,7 @@ img{
 
 .lista{
     display: grid;
-    grid-template-rows: repeat(10, 95px);
+    grid-template-rows: repeat(11, 85px);
     background-color: rgba(249, 249, 249, 1);
     padding-top: 5%;
     align-items: center;
@@ -146,20 +179,30 @@ img{
 }
 
 .der p{
-    font-size: 0.95em;
+    font-size: 0.97em;
     color: rgba(150, 150, 150, 1);
+    line-height: 18px;
 }
 
-#commission h1{
-    font-size: 2em;
+#commission{
+    width: auto;
+    height: 100vh;
+    background-image: url(../images/comm.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#commission h1, #payment h1, #shop h1{
+    font-size: 2.5em;
     text-transform: uppercase;
     text-align: center;
-    padding: 5% 0% 5% 0%;
+    padding: 7% 0% 13% 0%;
+    color: rgb(25 25 25);
 }
 
 .container{
 	display: grid;
-    grid-template-columns: repeat(5, 20%);
+    grid-template-columns: repeat(5, 17%);
     justify-content: center;
     justify-items: center;
     text-align: center;
@@ -168,32 +211,31 @@ img{
 
 .forcomm{
     width: 62%;
+    background-color: white;
+    padding: 10% 5% 10% 5%;
+    border-radius: 8%;
 }
 
 .container i{
-    font-size: 3em;
-    padding: 20% 0% 10% 0%;
+    font-size: 3.5em;
+    padding: 10% 0% 20% 0%;
+    color: dimgrey;
 }
 
 .container h2{
     font-size: 1.3em;
     padding-bottom: 4%;
+    color: #211e1e;
 }
 
 .container p{
     font-size: 0.8em;
-}
-
-#payment h1, #shop h1{
-    font-size: 2em;
-    text-transform: uppercase;
-    text-align: center;
-    padding: 5% 0% 10% 0%;
+    color: #404040;
 }
 
 .treecircles{
 	display: grid;
-    grid-template-columns: repeat(3, 20%);
+    grid-template-columns: repeat(3, 22%);
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -202,21 +244,32 @@ img{
 
 .treecircles img{
     border-radius: 50%;
-    width: 65%;
+    width: 55%;
+}
+
+.treecircles p{
+    line-height: 18px;
+}
+
+.treecircles h2{
+    font-size: 1.5em;
+    padding: 4% 0% 7% 0%;
 }
 
 
 #shop{
-    background-color: rgb(32 44 62);
+    background-color: rgb(228 228 228);
 }
 
 #row{
     margin: 0 auto;
-    width: 88%;
+    width: 80%;
     display: grid;
     grid-template-columns: repeat(3,33%);
     justify-content: center;
     justify-items: center;
+    column-gap: 15px;
+    padding-bottom: 5%;
 }
 
 #row:after {
@@ -228,7 +281,6 @@ img{
 /*Tres columnas que están una al lado de la otra*/
 .column {   
    padding: 1%;
-   display: inline-block;
 }
 
 .column:hover{
@@ -248,6 +300,13 @@ img{
    background-color: rgba(0, 0, 0, 0.733);
 }
 
+#light p{
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    margin-top: 3%;
+}
+
 #x{
    text-decoration: none;
    color: white;
@@ -261,7 +320,7 @@ img{
 #imagen{
    margin: 0 auto;
    display: block;
-   width: 75%;
+   width: 65%;
 }
 
 #title{
@@ -283,10 +342,10 @@ img{
 }
 
 #DA{
-    background-image: url(../images/DA.png);
+    background-image: url(../images/DA.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 85vh;
 }
 
 #DeviantArt{
@@ -318,5 +377,174 @@ img{
 }
 
 #DeviantArt h1{
-    margin-bottom: 7%;
+    margin-bottom: 13%;
+    font-size: 1.5em;
+}
+
+/*-----------------------------------------------------*/
+/*------------------------MOBILE-----------------------*/
+/*-----------------------------------------------------*/
+
+@media only screen and (max-width: 720px){
+
+    #logo{
+        padding: 50% 0% 0% 0%;
+    }
+
+    #logo img{
+        width: 80%;
+    }
+
+    #logo h1{
+        font-size: 4em;
+    }
+
+    #mobile{
+        padding-left: 7%;
+        position: absolute;
+        top: 5%;
+        left: 0;
+    }
+
+    #mobile i{
+        display: block;
+        font-size: 2em;
+        padding-bottom: 20%;
+    }
+
+    #mobile ul{
+        transition: 1s ease-in-out;
+        display: grid;
+        grid-template-rows: repeat(6, 60px);
+        grid-template-columns: none;
+        display: none;
+    }
+
+    #mobile li{
+        padding: 10%;
+        background-color: rgba(105, 105, 105, .8);
+    }
+
+    #mobile a{
+        color: white;
+        text-decoration: none;
+        font-size: 1.3em;
+        background-color: rgba(105, 105, 105, 0.5);
+    }
+
+    #text{
+        width: 81%;
+    }
+
+    #text h1{
+        font-size: 3.5em;
+    }
+
+    #text p{
+        font-size: 1.5em;
+    }
+
+    #ToS{
+        grid-template-columns: repeat(1, 100%);
+    }
+
+    #img_izq{
+        display: none;
+    }
+
+    .lista{
+        grid-template-rows: repeat(11, 105px);
+    }
+
+    .der p {
+        font-size: 1.4em;
+    }
+
+    #commission{
+        height: auto;
+    }
+
+    #commission h1, #payment h1, #shop h1 {
+        font-size: 3em;
+        padding: 13% 0% 13% 0%;
+    }
+
+    .container{
+        display: grid;
+        grid-template-rows: repeat(5, 18%);
+        grid-template-columns: none;
+        justify-content: center;
+        justify-items: center;
+        row-gap: 40px;
+    }
+
+    .container i {
+        font-size: 5em;
+    }
+
+    .container h2 {
+        font-size: 2em;
+    }
+
+    .container p {
+        font-size: 1.5em;
+    }
+
+    .forcomm {
+        width: 51%;
+    }
+
+    .treecircles {
+        display: grid;
+        grid-template-rows: repeat(3, 30%);
+        grid-template-columns: none;
+        justify-content: center;
+        justify-items: center;
+        row-gap: 40px;
+    }
+
+    .treecircles img{
+        width: 45%;
+    }
+
+    .treecircles article{
+        width: 85%;
+    }
+
+    .treecircles h2{
+        font-size: 2em;
+    }
+
+    .treecircles p{
+        font-size: 1.2em;
+    }
+
+    #row{
+        display: grid;
+        grid-template-columns: repeat(2,49%);
+        justify-content: center;
+        justify-items: center;
+        column-gap: 15px;
+    }
+
+    #light{
+        padding-top: 43%;
+    }
+
+    #x{
+        font-size: 3em;
+    }
+
+    #light p {
+        font-size: 2.3em;
+    }
+
+    #DA{
+        height: auto;
+    }
+
+    #DeviantArt a{
+        padding: 2%;
+        font-size: 1em;
+    }
 }
