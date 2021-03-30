@@ -11,6 +11,26 @@ let iconos = ["fas fa-circle", "fas fa-circle", "fas fa-circle", "fas fa-circle"
     tituloPaym = ["Western Union", "Cash Pick Up", "Ticket"],
     infoPaym = ["I accept Western Union only (Payment preferably €, otherwise USD).", "You will choose the option 'Cash pick up' in the section 'How does your receiver want the money?'.", "You must send me a photo or screenshot of the ticket: the full name, country from which it comes, amount of money and Tracking Number (MTCN) must appear."],
 
+//PresetsS
+    exampleS = ["simple", "simpleD"],
+    titleS = ["Simple Presets ($5 - $10)"],
+    descripS = ["Includes: 1 - 3 markings, till 2 colors and simple color blends."],
+
+//PresetsI
+    exampleI = ["inter", "interD"],
+    titleI = ["Intermediate Presets ($11 - $15)"],
+    descripI = ["Includes: 4 - 7 markings, 3 - 4 colors and more detailed color blends."],
+
+//PresetsC
+    exampleC = ["complex", "complexD"],
+    titleC = ["Complex Presets ($16 - $20)"],
+    descripC = ["Includes: 8+ markings, 5+ colors and complex detailed color blends."],
+
+//PresetsE
+    exampleE = ["extras"],
+    titleE = ["Extras ($1 - $5)"],
+    descripE = ["Includes: Scars, heterochromia, asymmetry, piebald markings, decors and coding.<br>Everything's price will vary depending on the complexity."],
+
 //Shop
     images = ["1", "2", "3", "4", "5", "6"],
     text = ["Grey Web Lady (5 usd/euros)", "Pale Sweetheart (6 usd/euros)", "Tricolor Wolf (7 usd/euros)", "Meek Beast (12 usd/euros)", "The Protector (12 usd/euros)", "Mystical Lady (9 usd/euros)"];
@@ -32,6 +52,62 @@ function lista(){
     for(l = 0; l < 6; l++){
         document.getElementById("row").innerHTML += "<li class='column'><img src='assets/images/" + images[l] + ".png' onclick='openLightbox(" + images[l] + ")' alt='Shop image' width='' height=''></li>";
     }
+
+//Simple presets
+    for(m = 0; m < 2; m++){
+        document.getElementsByClassName("exampleS")[0].innerHTML += "<img src='assets/images/" + exampleS[m] + ".png' width='' height='' alt='Simple preset example'>";
+    }
+    for(n = 0; n < 1; n++){
+        document.getElementsByClassName("exampleS")[0].innerHTML += "<h2>" + titleS[n] + "</h2><p>" + descripS[n] + "</p>";
+    }
+
+//Intermediate presets
+    for(o = 0; o < 2; o++){
+        document.getElementsByClassName("exampleI")[0].innerHTML += "<img src='assets/images/" + exampleI[o] + ".png' width='' height='' alt='Intermediate preset example'>";
+    }
+    for(p = 0; p < 1; p++){
+        document.getElementsByClassName("exampleI")[0].innerHTML += "<h2>" + titleI[p] + "</h2><p>" + descripI[p] + "</p>";
+    }
+
+//Complex presets
+    for(q = 0; q < 2; q++){
+        document.getElementsByClassName("exampleC")[0].innerHTML += "<img src='assets/images/" + exampleC[q] + ".png' width='' height='' alt='Complex preset example'>";
+    }
+    for(r = 0; r < 1; r++){
+        document.getElementsByClassName("exampleC")[0].innerHTML += "<h2>" + titleC[r] + "</h2><p>" + descripC[r] + "</p>";
+    }
+
+//Extras
+    for(s = 0; s < 1; s++){
+        document.getElementsByClassName("exampleE")[0].innerHTML += "<img src='assets/images/" + exampleE[s] + ".jpg' width='' height='' alt='Extras preset example'>";
+    }
+    for(t = 0; t < 1; t++){
+        document.getElementsByClassName("exampleE")[0].innerHTML += "<h2>" + titleE[t] + "</h2><p>" + descripE[t] + "</p>";
+    }
+}
+
+function examples(){
+
+    $('.s').click(function(){
+        $('.exampleS').css('display', 'grid');
+        $('.exampleI, .exampleC, .exampleE').css('display', 'none');
+    });
+
+    $('.i').click(function(){
+        $('.exampleI').css('display', 'grid');
+        $('.exampleS, .exampleC, .exampleE').css('display', 'none');
+    });
+    
+    $('.c').click(function(){
+        $('.exampleC').css('display', 'grid');
+        $('.exampleS, .exampleI, .exampleE').css('display', 'none');
+    });
+
+
+    $('.e').click(function(){
+        $('.exampleE').css('display', 'grid');
+        $('.exampleS, .exampleI, .exampleC').css('display', 'none');
+    });
 }
 
 function openLightbox(img){
