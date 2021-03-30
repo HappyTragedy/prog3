@@ -22,11 +22,11 @@ function lista(){
     }
 
     for(j = 0; j < 3; j++){
-        document.getElementsByClassName("treecircles")[0].innerHTML += "<article><figure><img src='assets/images/" + imagesPaym[j] + ".png' class='image3'></figure><div class='payment'><h2>" + tituloPaym[j] + "</h2><p>" + infoPaym[j] + "</p></article>";
+        document.getElementsByClassName("treecircles")[0].innerHTML += "<article><figure><img src='assets/images/" + imagesPaym[j] + ".png' class='image3'></figure><div class='payment'><h3>" + tituloPaym[j] + "</h3><p>" + infoPaym[j] + "</p></article>";
     }
 
     for(k = 0; k < 5; k++){
-        document.getElementsByClassName("container")[0].innerHTML += "<article class='forcomm'><figure class='up'><i class='" + icon[k] + "'></i><figurecaption class='right'><h2>" + titlecomm[k] + "</h2><p>" + infocomm[k] + "</p></figcaption></figure></article>";
+        document.getElementsByClassName("container")[0].innerHTML += "<article class='forcomm'><figure class='up'><i class='" + icon[k] + "'></i><figurecaption class='right'><h3>" + titlecomm[k] + "</h3><p>" + infocomm[k] + "</p></figcaption></figure></article>";
     }
 
     for(l = 0; l < 6; l++){
@@ -44,3 +44,105 @@ function openLightbox(img){
   function closeLightbox(){
     document.getElementById('light').setAttribute("class", "bye");
 }
+
+function comm(){
+    document.getElementById('myForm').style.display ='grid';
+    document.getElementsByClassName("container")[0].style.display ='none';
+    document.getElementsByClassName("commBtn")[0].style.display = 'none';
+}
+
+// A $( document ).ready() block.
+$( document ).ready(function() {
+    console.log( "ready!" );
+
+    /*$("#nombre").val("Micaela");//dentro de la casilla del formulario donde va el nombre pone el valor que está entre ().
+
+    $(".prueba").css("color", "red");//Le pone el color rojo a lo que está en la clase "prueba".
+
+    $(".prueba").click(function(){
+        if($(".prueba").css("color", "red")){
+            $(".prueba").css("color", "yellow");
+        }
+    })*/
+
+    //Validacion mail
+    $.validator.addMethod("customemail",//Esto verifica que esté bien construida la dirección de mail
+        function (value, element) {
+            return /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(value);
+        },
+        "Ingresá una dirección de email"
+    );
+
+    $("#myForm").validate({//Esto va a validar que los campos tengan algo, sino no podes continuar.
+        rules: {
+            "nombre": {
+                required: true,
+                minlength: 2,
+                maxlength: 10
+            },
+            "email": {
+                required: {
+                    depends: function () {
+                        $(this).val($.trim($(this).val()));
+                        return true;
+                    }
+                },
+                customemail: true//verifica que el método de arriba sea true, sino no podes seguir.
+            },
+            "sexo": {
+                required:true
+            },
+            "comentarios": {
+                required:true
+            }
+        },
+        messages: {//En vez de decir "field required" dice lo que ponemos acá abajo.
+            "nombre": "Ingresa tu nombre",
+            "sexo": "Selecciona un valor",
+            "email": "Ingresa tu mail",
+            "comentarios": "Deja comentarios"
+        },
+        submitHandler: function(form){//Esto lo va a mandar el form
+            console.log("Form sent");
+            //$(form).submit();
+
+            $.ajax({
+                url:form.action,
+                type:form.method,
+                data:$(form).serialize(),
+                beforeSend:function(){
+                    $(".responseForm").html("Wait for it...");
+                },
+                success:function(response){
+                    console.log(response);
+                    $(".responseForm").html("Gracias " + response.nombre + " por tu mensaje!");
+                }
+            })
+        }
+    });
+
+    const loadLeads = () => {
+        $.ajax({
+            url:"https://prog-3-leads-api-rest.vercel.app/leads",
+            type: "GET",
+            success:function(){
+                $(".listado").html("");
+                response.array.forEach(element => {
+                    console.log(element);
+                    $(".listado").append("<li>" + element.nombre + "</li>");
+
+                    if($("#sexo option:selected").val() === H){
+                        $(".listado").append("<li> Masculino </li>");
+                    }else if ($("#sexo option:selected").val() === F){
+                        $(".listado").append("<li> Femenino </li>");
+                    }
+
+                    $(".listado").append("<li>" + element.comentarios + "</li>");
+                });
+            }
+        })
+    }
+
+    loadLeads();
+
+});

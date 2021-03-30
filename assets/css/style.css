@@ -33,6 +33,20 @@ table {
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
+html{
+    scroll-behavior: smooth;
+}
+
+@font-face{
+    font-family: "Tempus Sans ITC";
+    src:url("../fonts/TEMPSITC.TTF");
+}
+
+@font-face{
+    font-family: "Blue Highway";
+    src: url("../fonts/blue\ highway\ rg.ttf");
+}
+
 
 main, header, footer{
 	margin: 0 auto;
@@ -44,11 +58,11 @@ img{
 	max-width: 100%;
 }
 
-h1{
+h1, h2{
     font-family: "Tempus Sans ITC";
 }
 
-h2, a{
+h3, a{
     font-family: "Blue Highway";
 }
 
@@ -57,7 +71,7 @@ p{
 }
 
 #hero{
-    background-image: url(../images/hero.png);
+    background-image: url(../images/hero.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
@@ -66,20 +80,14 @@ p{
 
 #logo{
     display: grid;
-    grid-template-columns: repeat(1, 50%);
+    grid-template-columns: repeat(2, 48%);
     justify-content: center;
-    justify-items: center;
-    padding: 7% 0% 16% 0%;
+    align-items: center;
 }
 
 #logo img{
-    width: 40%;
+    width: 13%;
     border-radius: 50%;
-}
-
-#logo h1{
-    color: white;
-    font-size: 2.5em;
 }
 
 #mobile i{
@@ -99,6 +107,15 @@ p{
     font-size: 1.2em;
 }
 
+#intro{
+    padding: 18% 0% 0% 2%;
+}
+
+#intro h1{
+    color: white;
+    font-size: 5em;
+}
+
 #aboutme{
 	max-width: 100%;
 }
@@ -106,18 +123,17 @@ p{
 #text{
 	width: 48%;
     text-align: center;
-    margin: 0 auto;
+    margin: 13% 0% 13% 26%;
 }
 
-#text h1{
+#text h2{
 	font-size: 2.5em;
-    margin: 20% 0% 11% 0%;
+    margin: 0% 0% 11% 0%;
     text-transform: uppercase;
     color: rgb(25 25 25);
 }
 
 #text p{
-	margin-bottom: 20%;
 	font-size: 1em;
 	line-height: 1.7em;
 	color: rgba(85, 85, 85, 1);
@@ -134,7 +150,7 @@ p{
 	position: relative;
 }
 
-#img_izq h1{
+#img_izq h2{
     position: absolute;
     color: white;
     font-size: 3em;
@@ -171,7 +187,7 @@ p{
     float: left;
 }
 
-.der h1{
+.der h2{
     padding-bottom: 3%;
     font-size: 1.3em;
     color: rgba(51, 51, 51, 1);
@@ -187,16 +203,16 @@ p{
 #commission{
     width: auto;
     height: 100vh;
-    background-image: url(../images/comm.png);
+    background-image: url(../images/comm.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-#commission h1, #payment h1, #shop h1{
+#commission h2, #payment h2, #shop h2{
     font-size: 2.5em;
     text-transform: uppercase;
     text-align: center;
-    padding: 7% 0% 13% 0%;
+    padding: 7% 0% 8% 0%;
     color: rgb(25 25 25);
 }
 
@@ -207,6 +223,7 @@ p{
     justify-items: center;
     text-align: center;
     align-items: center;
+    padding-bottom: 7%;
 }
 
 .forcomm{
@@ -222,7 +239,7 @@ p{
     color: dimgrey;
 }
 
-.container h2{
+.container h3{
     font-size: 1.3em;
     padding-bottom: 4%;
     color: #211e1e;
@@ -231,6 +248,97 @@ p{
 .container p{
     font-size: 0.8em;
     color: #404040;
+}
+
+#commission a{
+    padding: 1%;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2.5px;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    border-radius: 3%;
+    font-size: 0.8em;
+    position: absolute;
+    left: 42%;
+}
+
+#commission a:hover{
+	background-color: white;
+  	color: black;
+  	transform: translateY(-7px);
+  	border: 2px solid #000000;
+  	border-radius: 3%;
+}
+
+#myForm{
+    width: 55%;
+    background-color: white;
+    border-radius: 5%;
+    display: none;
+    margin: 0 auto;
+    padding: 2%;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 15px;
+    column-gap: 5%;
+}
+
+label, select[name="sexo"]{
+    grid-column: 1/2;
+    font-family: "Blue Highway";
+}
+
+input[type="text"]{
+    grid-column: 2/3;
+    font-family: "Tahoma";
+}
+
+textarea{
+    grid-column: 1/3;
+    font-family: "Tahoma";
+}
+
+input[type="submit"]{
+    grid-column: 1/4;
+    padding: 2%;
+    font-family: "Blue Highway";
+    background-color: black;
+    color: white;
+    border-color: white;
+    width: 25%;
+    margin: 0 auto;
+    margin-top: 3%;
+}
+
+#myForm input[type="text"], input[type="email"], select{
+    border-bottom: 1px solid #c1c1c1;
+    background: transparent;
+}
+
+#fname-error, #email-error, #sexo-error, #comentarios-error{
+    grid-column: 3/3;
+    align-items: center;
+    justify-items: center;
+    display: grid;
+}
+
+.responseForm{
+    padding-left: 2%;
+    font-weight: 600;
+    margin-top: 1%;
+    color: #404040;
+    text-transform: uppercase;
+}
+
+#api h2{
+    font-size: 2.5em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 7% 0% 8% 0%;
+    color: rgb(25 25 25);
 }
 
 .treecircles{
@@ -251,7 +359,7 @@ p{
     line-height: 18px;
 }
 
-.treecircles h2{
+.treecircles h3{
     font-size: 1.5em;
     padding: 4% 0% 7% 0%;
 }
@@ -376,7 +484,7 @@ p{
   	border-radius: 3%;
 }
 
-#DeviantArt h1{
+#DeviantArt h2{
     margin-bottom: 13%;
     font-size: 1.5em;
 }
@@ -393,10 +501,6 @@ p{
 
     #logo img{
         width: 80%;
-    }
-
-    #logo h1{
-        font-size: 4em;
     }
 
     #mobile{
@@ -436,7 +540,7 @@ p{
         width: 81%;
     }
 
-    #text h1{
+    #text h2{
         font-size: 3.5em;
     }
 
@@ -464,7 +568,7 @@ p{
         height: auto;
     }
 
-    #commission h1, #payment h1, #shop h1 {
+    #commission h2, #payment h2, #shop h2 {
         font-size: 3em;
         padding: 13% 0% 13% 0%;
     }
@@ -482,7 +586,7 @@ p{
         font-size: 5em;
     }
 
-    .container h2 {
+    .container h3 {
         font-size: 2em;
     }
 
@@ -511,7 +615,7 @@ p{
         width: 85%;
     }
 
-    .treecircles h2{
+    .treecircles h3{
         font-size: 2em;
     }
 

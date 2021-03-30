@@ -7,6 +7,7 @@
     <title>Nani's FH/FN Presets</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
 </head>
 <body id="cuerpo" onload="lista(), mobile()">
 <!--HEADER-->
@@ -14,9 +15,7 @@
         <section id="hero">
             <div id="logo">
                 <img src="assets/images/chems.png" width="" height="" alt="logo">
-                <h1>Lomgo</h1>
-            </div>
-        <!--Menú hamburguesa-->
+                <!--Menú hamburguesa-->
             <nav id="mobile">
 				<a href="javascript:hamburguesa()"><i id="list" class="fas fa-ellipsis-v"></i></a>
 				<ul id="menumobile">
@@ -29,6 +28,10 @@
 				</ul>
 			</nav>
         <!--//Menú hamburguesa-->
+            </div>
+            <div id="intro">
+                <h1>Bienvenido</h1>
+            </div>
         </section>
     </header>
 <!--//HEADER-->
@@ -37,16 +40,17 @@
     <!--About Me-->
     <section id="aboutme">
         <div id="text">
-            <h1>Welcome</h1>
-            <p>Hello! You can call me Nani and here you will find all the comm info. Be sure to read my ToS before commissioning me.<br>
-            You can find me in discord (<b>HappyTragedy #1477</b>), FH (<b>Xoda</b>) and FN (<b>MindlessFreak</b>).</p>
+            <h2>Welcome</h2>
+            <p>Hello! You can call me Nani and here you will find all the comm info.</p>
+            <p>Be sure to read my ToS before commissioning me.</p>
+            <p>You can find me in discord (<b>HappyTragedy #1477</b>), FH (<b>Xoda</b>) and FN (<b>MindlessFreak</b>).</p>
         </div>
     </section>
     <!--//About Me-->
     <!--ToS-->
     <section id="ToS">
         <div id="img_izq">
-            <h1>Terms of Service</h1>
+            <h2>Terms of Service</h2>
             <img src="assets/images/foto.jpg">
         </div>
         <div class="lista"></div>
@@ -54,13 +58,40 @@
     <!--//ToS-->
     <!--Commission-->
 	<section id="commission">
-        <h1>So, do you want a commission?</h1>
+        <h2>So, do you want a commission?</h2>
+        <!--<p class="prueba">Prueba</p>-->
 		<div class="container"></div>
+        <a class="commBtn" onclick="comm()">Ask for a commission</a>
+
+        <form action="https://prog-3-leads-api-rest.vercel.app/leads" id="myForm" method="POST">
+            <label for="fname">Name:</label>
+            <input type="text" id="fname" name="nombre" placeholder="Ingrese su nombre" autocomplete="off">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" placeholder="Ingrese su email" autocomplete="off">
+            <select name="sexo" id="sexo">
+                <option value="" disabled selected>Gender</option>
+                <option value="F">Mujer</option>
+                <option value="H">Hombre</option>
+                <option value="Otro">Otro</option>
+            </select>
+            <textarea name="comentarios" id="" cols="15" rows="7" placeholder="Leave a comment" autocomplete="off"></textarea>
+            <input type="submit" value="Enviar">
+        </form>
+
+        <p class="responseForm"></p>
 	</section>
 <!--//Commission-->
+<!--Prueba con API-->
+    <section id="api">
+        <h2>Our satisfied clients</h2>
+        <div id="listadocontainer">
+            <ul class="listado"></ul>
+        </div>
+    </section>
+<!--//Prueba con API-->
 <!--Payment-->
     <section id="payment">
-        <h1>Payment</h1>
+        <h2>Payment</h2>
         <div class="treecircles"></div>
     </section>
 <!--//Payment-->
@@ -79,7 +110,7 @@
 <!--//Presets-->
 <!--Shop-->
     <section id="shop">
-        <h1>Shop</h1>
+        <h2>Shop</h2>
         <ul id="row"></ul>
         <div  id="light" class="bye">
             <figure>
@@ -95,7 +126,7 @@
 <!--DeviantArt-->
     <section id="DA">
         <div id="DeviantArt">
-            <h1>You can also find me in DeviantArt</h1>
+            <h2>You can also find me in DeviantArt</h2>
             <a href="https://www.deviantart.com/inanase/gallery/77245681/fh-fn-presets" target="_blank">Visit me</a>
         </div>
     </section>
@@ -106,7 +137,9 @@
 <footer>
 
 </footer>
-<script type="text/javascript" src="assets/js/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js" integrity="sha512-UdIMMlVx0HEynClOIFSyOrPggomfhBKJE28LKl8yR3ghkgugPnG6iLfRfHwushZl1MOPSY6TsuBDGPK2X4zYKg==" crossorigin="anonymous"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
 <script type="text/javascript" src="assets/js/responsive.js"></script>
 <!--//FOOTER-->
 </body>
