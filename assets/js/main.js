@@ -123,8 +123,8 @@ function openLightbox(img){
 
 function comm(){
     document.getElementById('myForm').style.display ='grid';
-    document.getElementsByClassName("container")[0].style.display ='none';
-    document.getElementsByClassName("commBtn")[0].style.display = 'none';
+    document.getElementsByClassName('container')[0].style.display ='none';
+    document.getElementsByClassName('commBtn')[0].style.display = 'none';
 }
 
 // A $( document ).ready() block.
@@ -201,20 +201,26 @@ $( document ).ready(function() {
         $.ajax({
             url:"https://prog-3-leads-api-rest.vercel.app/leads",
             type: "GET",
-            success:function(){
+            success:function(response){
+                //var clients = [];
+
                 $(".listado").html("");
-                response.array.forEach(element => {
-                    console.log(element);
-                    $(".listado").append("<li>" + element.nombre + "</li>");
 
-                    if($("#sexo option:selected").val() === H){
-                        $(".listado").append("<li> Masculino </li>");
-                    }else if ($("#sexo option:selected").val() === F){
-                        $(".listado").append("<li> Femenino </li>");
-                    }
+                //for(i = response.lenght-1; i < 3; i--){
+                    //clients.push(response[i]);
 
-                    $(".listado").append("<li>" + element.comentarios + "</li>");
-                });
+                    response.forEach(element => {
+                        console.log(element);
+    
+                        if($("#sexo option:selected").val() === "H"){
+                            $(".listado").append("<li> Masculino </li>");
+                        }else if ($("#sexo option:selected").val() === "F"){
+                            $(".listado").append("<li> Femenino </li>");
+                        }
+    
+                        $(".listado").append("<li>" + element.nombre + "</li>" + "<li>" + element.sexo + "</li>" + "<li>" + element.comentarios + "</li>");
+                    });
+                //}
             }
         })
     }
